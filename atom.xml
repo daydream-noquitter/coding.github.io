@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://daydream-noquitter.github.io/coding.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-04-25T16:39:25.168Z</updated>
+    <updated>2022-05-01T14:08:55.579Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://daydream-noquitter.github.io/coding.github.io/"/>
     <link rel="self" href="https://daydream-noquitter.github.io/coding.github.io/atom.xml"/>
@@ -10,6 +10,27 @@
     <logo>https://daydream-noquitter.github.io/coding.github.io/images/avatar.png</logo>
     <icon>https://daydream-noquitter.github.io/coding.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[软件构造 5.1 （java语法）]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-51-java-yu-fa/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-51-java-yu-fa/">
+        </link>
+        <updated>2022-05-01T14:05:15.000Z</updated>
+        <content type="html"><![CDATA[<p>1.set<br>
+set相当于维护了一个集合<br>
+set.contain()用来判断一个元素是否在这个集合中<br>
+set.add() 用来向set里面添加一个元素<br>
+2.list<br>
+list.add<br>
+for(int i=0;i&lt;list.size();i++)<br>
+用这种方法来遍历<br>
+3.map<br>
+map.put(,)<br>
+map.get()<br>
+常用的两个接口<br>
+思考一下java也是一个面向对象语言，所以我在思考的时候，实际上就是在思考这个对象应该怎么来操作。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[软件构造 4.25]]></title>
         <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-425/</id>
