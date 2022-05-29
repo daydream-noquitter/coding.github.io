@@ -1,0 +1,204 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>软件构造之抽象层次 ADT OOP | Gridea</title>
+<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1653837369011">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="软件构造之抽象层次 ADT OOP | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="关于这种问题可以总结出一套方法来
+对于想要表示出A根据B产生影响 可以有这么几种方法
+A中定义一个B ，A的类中对B进行操作
+A中定义一个类，参数为B
+而如果A想要实现一个B基础上的功能 方法有
+A继承B 并且多实现一些类
+A中定义B，并且..." />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://daydream-noquitter.github.io/coding.github.io/">
+  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1653837369011" alt="">
+  </a>
+  <h1 class="site-title">
+    Gridea
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              软件构造之抽象层次 ADT OOP
+            </h2>
+            <div class="post-info">
+              <span>
+                2022-05-29
+              </span>
+              <span>
+                5 min read
+              </span>
+              
+            </div>
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <p>关于这种问题可以总结出一套方法来<br>
+对于想要表示出A根据B产生影响 可以有这么几种方法<br>
+A中定义一个B ，A的类中对B进行操作<br>
+A中定义一个类，参数为B<br>
+而如果A想要实现一个B基础上的功能 方法有<br>
+A继承B 并且多实现一些类<br>
+A中定义B，并且类可以调用B对象<br>
+分别是继承和组合的思路<br>
+这里面我上一道题采用组合，这一道题采用继承，原因分别是上一道题 我们想要自然表达出来的意思是自然构建出一个图，但是只是一个工具来实现poetwalk<br>
+而这道题 我们的friendshipgraph就是我们这个类的主体功能，并且将会而且很有可能会被继续复用，因为它仍然保持一个图，比如我们下一个需求是实现继承这个图，继续操作的话，我们用继承就要比组合逻辑更加清晰了<br>
+6.1实验过程中收获的经验和教训（必答）<br>
+1.先测试再写 ！！！<br>
+非常有用！！<br>
+等价类测试的思想成功的平衡了程序员在编程完成之后的心态与事实程序的有效性与可靠性问题。也就是在我们编程之后，更倾向于较简单的方法的操作，这里先把测试在头脑最清醒的时候编写完，然后之后就可以一键测试了，这对程序员非常友好。<br>
+事实上，这种思想解决了我考试的问题，因为我做完题后不喜欢检查，这样，我就可以提前准备好需要测试的样例，做完之后拿进去检查，实现了正确率的突破。<br>
+2.边写程序，边写报告，非常重要！<br>
+3.思考非常重要，并且不要局限于PPT或老师陈述的例子，多去网上找实现的好的代码，从中体会那些顶尖程序员的思想与设计方法<br>
+4.和助教交流非常重要，非常感谢助教的帮助，让我注意到了很多细节，以及一些犯的错误<br>
+6.2针对以下方面的感受（必答）<br>
+(1)面向ADT的编程和直接面向应用场景编程，你体会到二者有何差异？</p>
+<p>面向ADT的编程，其实主要就是重视可扩展性与可迁移性，而面向应用场景编程更多是考虑当前任务的属性和特性 进行一些特化的编程。事实上，ADT的编程与直接面向应用编程以我们接触到的并不是绝对的。<br>
+用数学化表示 F（V，B，H）V表示抽象化的程度，B表示具象化程度，H表示抽象意义的事实深度，事实上我们是利用一定程度的抽象与一定程度的具象在一定维度与深度的空间内完成任务，可以用较低维度空间内的抽象来实现一个相对具象的应用程序，也可以用一个较高层次的抽象结合上较低层次的具象来完成任务。<br>
+这是因为任务本身就不是处在具象的最底层，所以只需要提升一下具象任务的抽象层次，很容易实现一个当前应用程序的泛化。而同样降低层次也是很容易的，这是由ADT所影响的，只需要往下具体化一个层次，就具象化程度更高了。</p>
+<p>可以想到的对于一个非常具体的任务，我们也没有必要使用ADT，而对于大规模程序，内部相联度非常高，肯定一个个编太麻烦了，但是也有可能必须要一个一个编写，因此还需要引入一个D，表示一种意义上的组联度，用来衡量使用ADT是否有价值。<br>
+(2)使用泛型和不使用泛型的编程，对你来说有何差异？<br>
+差异也是有的，但是使用泛型更适合编写更加大型的程序，在大规模程序且程序需要复用的情况比较多的时候，我们用泛型编程更有优势。在具体小任务种，不使用泛型同样也很有竞争力。<br>
+(3)在给出ADT的规约后就开始编写测试用例，优势是什么？你是否能够适应这种测试方式？<br>
+优势是可以非常清醒的思考整个行为是什么样子的，首先这种测试的编写，就需要对其行为有较高程度的抽象理解，虽然不必知道内部细节。其次这种测试有助于平衡程序员在完成任务时的心态与程序的客观准确率可靠性。因为我们编程之后并不喜欢去自己再去写测试样例，这很累对吧，所以我们提前去写测试样例，一方面利用了思考项目的时间，另一方面节约了编完程测试的时间。<br>
+非常能！<br>
+(4)P1设计的ADT在多个应用场景下使用，这种复用带来什么好处？<br>
+节约了程序员的体力，以及代码容量，更重要的是让项目的组织架构更加清晰<br>
+(5)为ADT撰写specification, invariants, RI, AF，时刻注意ADT是否有rep exposure，这些工作的意义是什么？你是否愿意在以后编程中坚持这么做？<br>
+这些的意义是用来保证我们的项目能有效 稳定且可靠的在客户端手里运行<br>
+是的</p>
+
+              </div>
+              <div class="toc-container">
+                
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-515/">
+              <h3 class="post-title">
+                软件构造 5.15
+              </h3>
+            </a>
+          </div>
+        
+
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
