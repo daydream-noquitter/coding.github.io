@@ -2,17 +2,24 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>软件构造 4.25 | Gridea</title>
+<title>软件构造复习（二）：6.2 重点梳理（按照往年PPT） | Gridea</title>
 <link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1654172278695">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="软件构造 4.25 | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="软件构造复习（二）：6.2 重点梳理（按照往年PPT） | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="今天的课程主要分为两个部分，第一节课 主要是讲怎么划分等价类 值得注意的是一道题 因为D没有考虑length和0的关系，所以虽然看上去非常正确，但是还是不对的。
-第二节课 主要是在讲习题课，还好，java比我想象的好上手多了，另外java真..." />
+    <meta name="description" content="第1.3讲
+1.软件构造的多维度视图
+2.软件构造的阶段划分、各阶段的构造活动
+3.内部/外部的质量指标
+4.软件配置管理SCM与版本控制系统VCS
+5.Git的结构、工作原理、基本指令
+第4-8讲
+1.基本数据类型、对象数据类型
+2.静态..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -75,22 +82,85 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              软件构造 4.25
+              软件构造复习（二）：6.2 重点梳理（按照往年PPT）
             </h2>
             <div class="post-info">
               <span>
-                2022-04-26
+                2022-06-02
               </span>
               <span>
-                1 min read
+                3 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>今天的课程主要分为两个部分，第一节课 主要是讲怎么划分等价类 值得注意的是一道题 因为D没有考虑length和0的关系，所以虽然看上去非常正确，但是还是不对的。<br>
-第二节课 主要是在讲习题课，还好，java比我想象的好上手多了，另外java真的好舒服，有一点开发的感觉了。</p>
+                <p>第1.3讲<br>
+1.软件构造的多维度视图<br>
+2.软件构造的阶段划分、各阶段的构造活动<br>
+3.内部/外部的质量指标<br>
+4.软件配置管理SCM与版本控制系统VCS<br>
+5.Git的结构、工作原理、基本指令</p>
+<p>第4-8讲<br>
+1.基本数据类型、对象数据类型<br>
+2.静态/动态类型检查<br>
+3.Mutable/Immutable<br>
+4.值的改变、引用的改变、final<br>
+5.防御式拷贝<br>
+6.Snapshot diagram<br>
+7.Specification、前置/后置条件<br>
+8.行为等价性<br>
+9.规约的强度<br>
+10.ADT操作的四种类型<br>
+11.表示独立性、表示泄露<br>
+12. 不变量、表示不变量RI<br>
+13.表示空间、抽象空间、AF<br>
+14. 以注释的形式撰写AF、RI<br>
+15.接口、抽象类、具体类<br>
+16. 继承、override<br>
+17.多态、overload<br>
+18. 泛型<br>
+19.等价性equals()和==<br>
+20.equals()的自反、传递、对称<br>
+21.hashCode()<br>
+22. 不可变对象的引用等价性、对象等价性<br>
+23. 可变对象的观察等价性、行为等价<br>
+第九讲</p>
+<ol>
+<li>Programing for/with reuse<br>
+2.LSP<br>
+3.协变、反协变<br>
+4.数组的子类型化<br>
+5.泛型的子类型化<br>
+6.泛型中的通配符(?)<br>
+7.Delegation<br>
+8.Comparator和Comparable<br>
+9.CRP原则<br>
+10.接口的组合<br>
+11.白盒框架的原理与实现<br>
+12.黑盒框架的原理与实现<br>
+第十、十一讲<br>
+1.可维护性的常见度量指标<br>
+2.聚合度与耦合度<br>
+3.SOLID<br>
+4.语法、正则表达式<br>
+5.设计模式adapter、decorator、strategy、template、<br>
+iterator/iterable、factory method、visitor</li>
+</ol>
+<p>第二 十二讲<br>
+健壮性和正确性<br>
+1.Throwable<br>
+2.Error/Runtime异常、其他异常<br>
+3.Checked异常、Unchecked异 常§ Checked异常的处理机制： – 声明、抛出、捕获、处理、清理<br>
+现场、释放资源等<br>
+4.自定义异常类<br>
+5.断言的作用、应用场合<br>
+6.防御式编程的基本思路<br>
+7.黑盒测试用例的设计 – 等价类划分、边界值分析<br>
+8.以注释的形式撰写测试策略<br>
+9.JUnit测试用例写法<br>
+10.测试覆盖度</p>
 
               </div>
               <div class="toc-container">
@@ -103,9 +173,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://daydream-noquitter.github.io/coding.github.io/post/hello-gridea/">
+            <a href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-fu-xi-yi-61/">
               <h3 class="post-title">
-                Hello Gridea
+                软件构造复习（一）：6.1
               </h3>
             </a>
           </div>
