@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://daydream-noquitter.github.io/coding.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-06-02T12:18:03.694Z</updated>
+    <updated>2022-06-12T14:36:24.770Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://daydream-noquitter.github.io/coding.github.io/"/>
     <link rel="self" href="https://daydream-noquitter.github.io/coding.github.io/atom.xml"/>
@@ -10,6 +10,125 @@
     <logo>https://daydream-noquitter.github.io/coding.github.io/images/avatar.png</logo>
     <icon>https://daydream-noquitter.github.io/coding.github.io/favicon.ico</icon>
     <rights>All rights reserved 2022, Gridea</rights>
+    <entry>
+        <title type="html"><![CDATA[关于习题课三的thoughts]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/guan-yu-xi-ti-ke-san-de-thoughts/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/guan-yu-xi-ti-ke-san-de-thoughts/">
+        </link>
+        <updated>2022-06-11T13:54:03.000Z</updated>
+        <content type="html"><![CDATA[<p>首先前两部分没什么太多的东西<br>
+1.扩展car到其他交通工具类型 ：可复用性<br>
+为什么这个东西可以扩展呢<br>
+在于他们都有一个ability 但是可能大家都忽视的，就是他们都能停在停车场上，这是这几个object对于该任务的核心共性，parkability 在拓宽之后，可以对停object场，可以实现为每一次停object只要 某个lot的宽度大于object的宽度就可以停在这里<br>
+因而可以想到<br>
+可以设计一个parkable接口 提供核心的两个能力，getwidth getplace<br>
+而为了通用考虑，concreteparkingFiled record也就不能再用car而是要用parkable接口了<br>
+2.wonderful！<br>
+我们很自然的迎来了第一个问题？-？<br>
+在之前的parking方法中，我们是怎么实现的一个car 是不是用的new car<br>
+那么我们现在如果还用new car new motor这样会带来什么问题》<br>
+回顾工厂方法面对的问题是什么？<br>
+就是当客户端不知道要创建哪个类的实例时，或者不想在客户端代码指明要创建的实例时，用工厂方法<br>
+3.考虑怎么增加子类型的共用rep<br>
+很好想 ，在接口中增加一个field即可<br>
+那么新的一个计算方法怎么设计呢，修改方法，新增get方法获取即可<br>
+4.考虑不同车辆个体还想变怎么动呢，很简单，只需要给每个实现类都实现一个构造函数，在构造的时候，把这个参数传进去就可以了<br>
+5.visitor<br>
+很显然我只是把这个观察方法写死到这里面，以后动不了了，可复用性太差了对吧<br>
+那么用vistor设计模式就可以很自然的解决这个问题<br>
+来吧，回忆一下visitor是怎么干的<br>
+先去建立一个visitor的接口 parkingVisitor 只有一个方法 visit 方法<br>
+实现它的子类 PercentageVisitor 实现该visit方法 调用pf的方法获得pf的rep<br>
+再写一个accept（ParkingVisitor pv）  pv.visit（this）<br>
+如果还需要实现其他的呢，那就再实现一些新的visitor就好了</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[软件构造（把玩一些小例子+thoughts）]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-ba-wan-yi-xie-xiao-li-zi-thoughts/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-ba-wan-yi-xie-xiao-li-zi-thoughts/">
+        </link>
+        <updated>2022-06-11T02:26:38.000Z</updated>
+        <content type="html"><![CDATA[<p>1.CRP example<br>
+1） employee<br>
+展示了一个object level的reuse是多么强大<br>
+事实上这也是很容易理解的。<br>
+可以想到一个虽然语言是我们编写的，存在着一套根据语言的逻辑体系，而这种逻辑体系同样也符合人的思考逻辑体系<br>
+事实上 就是共性的范围越来越小的时候，怎么去更灵活的使用，比如说我们去思考 programmer和 manager之间的联系，事实上就是他们都是人，他们都领工资，他们都是这个公司的职员，还有其他的么，没有了。<br>
+那么一个支持object的reuse，符合人类认知习惯，也就十分重要了。<br>
+另一个很有意思的地方，客户端调用的时候，是直接调用的它的computeBonus 而这些像new MangagerBonusCalculator是我们自己写的时候才去声明的，为什么？为什么可以这么干？因为我们在实现的时候应该知道我们要调用哪个实现类。<br>
+对于这种问题，可以用一种比较一般的方法来衡量，就是信息公共体系。这个体系来衡量谁应该知道什么，不应该知道什么，（实际上就是SPEC对吧），但是它是所有的spec组织起来的一个体系。在大的项目里面，只看几个spec（通常是一个程序员编程的上限）还是不那么容易确定好框架的。<br>
+2）zoo<br>
+这个例子展示了多种方法，多重属性之间怎么利用CRP原则实现<br>
+对于OOP，我一直坚持的一个习惯就是先要确定各个对象的范畴，以及各个对象的组织关系，从而思考出来他们之间的架构体系。这样会十分自然。<br>
+所谓软件构造就是一步步把具象的东西撇开，扒出里面最抽象的东西，对着它一顿猛攻。<br>
+这里面先把动物名字撇了，没用，只是一堆爱是啥是啥的动物而已。<br>
+然后把行为名字，也撇了。再考察各个行为之间有没有关系，好，没有，那么行为之间就独立化了。<br>
+好了，我们现在有一堆不知道叫啥的行为，有一堆不知道叫啥的动物，我们希望能通用的实现这个能力，某种动物能够组合的应用某些行为能力。<br>
+为了通用化，我们很自然可以想到没有能力应该是能力实现的一种情况而不应该单独作为一种情况。<br>
+那么就是一个动物应该委派这些类型的行为。先声明是一个很easy的想法，但是它会进化诶？！<br>
+那么我们是不是应该加一个mutator，让它自己的行为能够发生改变。<br>
+在这里我们引入另外一种思考方法，就是信息完备定理。这个表示的是如果我这里面根本没用对应的信息，那么怎么搞这个都搞不出来这些信息。这里讲mutator看作一种信息，如果我自己没用改变的这个信息母体，那我怎么动也不可能进化啊，那么就需要加一个mutator，从而允许进化的可能。<br>
+那么这个例子我们就做完了。<br>
+3）课后习题</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[软件构造（知识点捡漏）]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-zhi-shi-dian-jian-lou/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-zhi-shi-dian-jian-lou/">
+        </link>
+        <updated>2022-06-11T01:25:04.000Z</updated>
+        <content type="html"><![CDATA[<p>1.黑盒框架 白盒框架<br>
+白盒框架 通过继承和动态绑定<br>
+通过用模板模式<br>
+.黑盒框架 通过接口或委派进行扩展<br>
+逻辑上 后面就讲的几种模式属于黑盒框架中的某些实现方式<br>
+2.-able -ator<br>
+以下关于Java中的-able和-ator的说法，不正确的是__</p>
+<p>A Comparator<T>是个接口，其类要实现的方法是compareTo(T a)<br>
+B Comparable<T>是个抽象类，子类需要实现的方法是compare (T a1, T a2)<br>
+C Iterable<E>是个接口，iterator()是其类要实现的方法<br>
+D Iterator<E>是个抽象类，其子类要实现的方法有hasNext(), next(), remove()<br>
+E Observable是个抽象类，其子类要实现的方法之一是notifyObservers()<br>
+F Observer是个抽象类，其子类要实现的方法之一是update(...)</p>
+<p>正确答案：ABDF<br>
+Comparator 在第十章讲的 它是个接口 实现的是compare (T a1, T a2)<br>
+那么不如继续看一看第十章为什么以它为例子以及讲了什么吧<br>
+一种方法让ADT实现这个接口 并重写里面的compare函数</p>
+<p>Iterable在第十一章讲的</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[关于override和overload]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/guan-yu-override-he-overload/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/guan-yu-override-he-overload/">
+        </link>
+        <updated>2022-06-05T15:08:18.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://daydream-noquitter.github.io/coding.github.io//post-images/1654441756216.png" alt="" loading="lazy"></figure>
+<p>这道题问的是 Animal animalRefTohorse = new Horse（）<br>
+animalrRefTohorse是哪种类型的<br>
+第一反应是它是horse的为什么呢<br>
+是跟</p>
+<p>deep copy</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[第1.3讲]]></title>
+        <id>https://daydream-noquitter.github.io/coding.github.io/post/di-13-jiang/</id>
+        <link href="https://daydream-noquitter.github.io/coding.github.io/post/di-13-jiang/">
+        </link>
+        <updated>2022-06-02T12:28:53.000Z</updated>
+        <content type="html"><![CDATA[<p>一：<br>
+先要搞清楚“软件构造的对象是什么”、“如何刻画”，<br>
+然后再关注“如何构造”<br>
+这是方法论<br>
+按照阶段划分  build 和tuntime<br>
+按照动态性 moment 和period moment指某一时刻，period指这一阶段的<br>
+按照层次 代码<br>
+其实这些都很容易思考出来</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[软件构造复习（二）：6.2 重点梳理（按照往年PPT）]]></title>
         <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-fu-xi-er-62-chong-dian-shu-li-an-zhao-wang-nian-ppt/</id>
@@ -208,48 +327,6 @@ map.put(,)<br>
 map.get()<br>
 常用的两个接口<br>
 思考一下java也是一个面向对象语言，所以我在思考的时候，实际上就是在思考这个对象应该怎么来操作。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[软件构造 4.25]]></title>
-        <id>https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-425/</id>
-        <link href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-425/">
-        </link>
-        <updated>2022-04-25T16:19:04.000Z</updated>
-        <content type="html"><![CDATA[<p>今天的课程主要分为两个部分，第一节课 主要是讲怎么划分等价类 值得注意的是一道题 因为D没有考虑length和0的关系，所以虽然看上去非常正确，但是还是不对的。<br>
-第二节课 主要是在讲习题课，还好，java比我想象的好上手多了，另外java真的好舒服，有一点开发的感觉了。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://daydream-noquitter.github.io/coding.github.io/post/hello-gridea/</id>
-        <link href="https://daydream-noquitter.github.io/coding.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>

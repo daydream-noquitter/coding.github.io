@@ -2,24 +2,20 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello Gridea | Gridea</title>
+<title>关于习题课三的thoughts | Gridea</title>
 <link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1654964598255">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello Gridea | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="关于习题课三的thoughts | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="👏  欢迎使用 Gridea ！
-✍️  Gridea 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...
-
-Github
-Gridea 主页
-示例网站
-特性👇
-📝  你可以使用最酷的 Markdo..." />
-    <meta name="keywords" content="Gridea" />
+    <meta name="description" content="首先前两部分没什么太多的东西
+1.扩展car到其他交通工具类型 ：可复用性
+为什么这个东西可以扩展呢
+在于他们都有一个ability 但是可能大家都忽视的，就是他们都能停在停车场上，这是这几个object对于该任务的核心共性，parkabi..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
   </head>
@@ -81,63 +77,63 @@ Gridea 主页
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello Gridea
+              关于习题课三的thoughts
             </h2>
             <div class="post-info">
               <span>
-                2018-12-12
+                2022-06-11
               </span>
               <span>
                 2 min read
               </span>
               
-                <a href="https://daydream-noquitter.github.io/coding.github.io/tag/AjFiTmbwf/" class="post-tag">
-                  # Gridea
-                </a>
-              
             </div>
-            
-              <img class="post-feature-image" src="https://daydream-noquitter.github.io/coding.github.io//post-images/hello-gridea.png" alt="">
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+                <p>首先前两部分没什么太多的东西<br>
+1.扩展car到其他交通工具类型 ：可复用性<br>
+为什么这个东西可以扩展呢<br>
+在于他们都有一个ability 但是可能大家都忽视的，就是他们都能停在停车场上，这是这几个object对于该任务的核心共性，parkability 在拓宽之后，可以对停object场，可以实现为每一次停object只要 某个lot的宽度大于object的宽度就可以停在这里<br>
+因而可以想到<br>
+可以设计一个parkable接口 提供核心的两个能力，getwidth getplace<br>
+而为了通用考虑，concreteparkingFiled record也就不能再用car而是要用parkable接口了<br>
+2.wonderful！<br>
+我们很自然的迎来了第一个问题？-？<br>
+在之前的parking方法中，我们是怎么实现的一个car 是不是用的new car<br>
+那么我们现在如果还用new car new motor这样会带来什么问题》<br>
+回顾工厂方法面对的问题是什么？<br>
+就是当客户端不知道要创建哪个类的实例时，或者不想在客户端代码指明要创建的实例时，用工厂方法<br>
+3.考虑怎么增加子类型的共用rep<br>
+很好想 ，在接口中增加一个field即可<br>
+那么新的一个计算方法怎么设计呢，修改方法，新增get方法获取即可<br>
+4.考虑不同车辆个体还想变怎么动呢，很简单，只需要给每个实现类都实现一个构造函数，在构造的时候，把这个参数传进去就可以了<br>
+5.visitor<br>
+很显然我只是把这个观察方法写死到这里面，以后动不了了，可复用性太差了对吧<br>
+那么用vistor设计模式就可以很自然的解决这个问题<br>
+来吧，回忆一下visitor是怎么干的<br>
+先去建立一个visitor的接口 parkingVisitor 只有一个方法 visit 方法<br>
+实现它的子类 PercentageVisitor 实现该visit方法 调用pf的方法获得pf的rep<br>
+再写一个accept（ParkingVisitor pv）  pv.visit（this）<br>
+如果还需要实现其他的呢，那就再实现一些新的visitor就好了</p>
 
               </div>
               <div class="toc-container">
-                <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E7%89%B9%E6%80%A7">特性👇</a></li>
-</ul>
-</li>
-</ul>
-
+                
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-ba-wan-yi-xie-xiao-li-zi-thoughts/">
+              <h3 class="post-title">
+                软件构造（把玩一些小例子+thoughts）
+              </h3>
+            </a>
+          </div>
         
 
         
