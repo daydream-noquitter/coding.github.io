@@ -2,20 +2,19 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>软件构造（把玩一些小例子+thoughts） | Gridea</title>
+<title> 另一种观点看软件构造-契约论看软件构造 | Gridea</title>
 <link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655131958056">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="软件构造（把玩一些小例子+thoughts） | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title=" 另一种观点看软件构造-契约论看软件构造 | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="1.CRP example
-1） employee
-展示了一个object level的reuse是多么强大
-事实上这也是很容易理解的。
-可以想到一个虽然语言是我们编写的，存在着一套根据语言的逻辑体系，而这种逻辑体系同样也符合人的思考逻辑体..." />
+    <meta name="description" content="借用社会契约论中的观点，
+规定了权利与义务。
+实际上spec规定了开发者和客户端的权利与义务。
+" />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -78,42 +77,23 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              软件构造（把玩一些小例子+thoughts）
+               另一种观点看软件构造-契约论看软件构造
             </h2>
             <div class="post-info">
               <span>
-                2022-06-11
+                2022-06-13
               </span>
               <span>
-                3 min read
+                1 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>1.CRP example<br>
-1） employee<br>
-展示了一个object level的reuse是多么强大<br>
-事实上这也是很容易理解的。<br>
-可以想到一个虽然语言是我们编写的，存在着一套根据语言的逻辑体系，而这种逻辑体系同样也符合人的思考逻辑体系<br>
-事实上 就是共性的范围越来越小的时候，怎么去更灵活的使用，比如说我们去思考 programmer和 manager之间的联系，事实上就是他们都是人，他们都领工资，他们都是这个公司的职员，还有其他的么，没有了。<br>
-那么一个支持object的reuse，符合人类认知习惯，也就十分重要了。<br>
-另一个很有意思的地方，客户端调用的时候，是直接调用的它的computeBonus 而这些像new MangagerBonusCalculator是我们自己写的时候才去声明的，为什么？为什么可以这么干？因为我们在实现的时候应该知道我们要调用哪个实现类。<br>
-对于这种问题，可以用一种比较一般的方法来衡量，就是信息公共体系。这个体系来衡量谁应该知道什么，不应该知道什么，（实际上就是SPEC对吧），但是它是所有的spec组织起来的一个体系。在大的项目里面，只看几个spec（通常是一个程序员编程的上限）还是不那么容易确定好框架的。<br>
-2）zoo<br>
-这个例子展示了多种方法，多重属性之间怎么利用CRP原则实现<br>
-对于OOP，我一直坚持的一个习惯就是先要确定各个对象的范畴，以及各个对象的组织关系，从而思考出来他们之间的架构体系。这样会十分自然。<br>
-所谓软件构造就是一步步把具象的东西撇开，扒出里面最抽象的东西，对着它一顿猛攻。<br>
-这里面先把动物名字撇了，没用，只是一堆爱是啥是啥的动物而已。<br>
-然后把行为名字，也撇了。再考察各个行为之间有没有关系，好，没有，那么行为之间就独立化了。<br>
-好了，我们现在有一堆不知道叫啥的行为，有一堆不知道叫啥的动物，我们希望能通用的实现这个能力，某种动物能够组合的应用某些行为能力。<br>
-为了通用化，我们很自然可以想到没有能力应该是能力实现的一种情况而不应该单独作为一种情况。<br>
-那么就是一个动物应该委派这些类型的行为。先声明是一个很easy的想法，但是它会进化诶？！<br>
-那么我们是不是应该加一个mutator，让它自己的行为能够发生改变。<br>
-在这里我们引入另外一种思考方法，就是信息完备定理。这个表示的是如果我这里面根本没用对应的信息，那么怎么搞这个都搞不出来这些信息。这里讲mutator看作一种信息，如果我自己没用改变的这个信息母体，那我怎么动也不可能进化啊，那么就需要加一个mutator，从而允许进化的可能。<br>
-那么这个例子我们就做完了。<br>
-3）课后习题</p>
+                <p>借用社会契约论中的观点，<br>
+规定了权利与义务。<br>
+实际上spec规定了开发者和客户端的权利与义务。</p>
 
               </div>
               <div class="toc-container">
@@ -126,9 +106,9 @@
         
           <div class="next-post">
             <div class="next">下一篇</div>
-            <a href="https://daydream-noquitter.github.io/coding.github.io/post/ruan-jian-gou-zao-zhi-shi-dian-jian-lou/">
+            <a href="https://daydream-noquitter.github.io/coding.github.io/post/ling-yi-chong-guan-dian-xin-xi-guan-dian-kan-ruan-jian-gou-zao/">
               <h3 class="post-title">
-                软件构造（知识点捡漏）
+                另一种观点--信息观点看软件构造
               </h3>
             </a>
           </div>
