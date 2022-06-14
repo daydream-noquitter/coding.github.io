@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>软件构造复习（一）：6.1 | Gridea</title>
-<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655131958056">
+<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655220725288">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="软件构造复习（一）：6.1 | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
@@ -25,7 +25,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://daydream-noquitter.github.io/coding.github.io/">
-  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655131958056" alt="">
+  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655220725288" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -85,7 +85,7 @@
                 2022-06-01
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
@@ -110,11 +110,22 @@ step：<br>
 承认事实1： 变化在软件生命周期中是不可避免的事情<br>
 附加因素1：我们希望尽可能减少工作量以及尽可能高效的工作<br>
 推导结论1： 我们需要注意编写软件中的可维护性，也就是说在初期充分考虑未来的变化<br>
+附加因素2：低耦合高内聚<br>
+附加因素3：层次结构清晰<br>
+推导结论2： 我们需要实现一个框架用来扩展功能<br>
 概念解释： “maintainability”,全周期需要考虑的 “extensibility”设计时需要考虑  and<br>
 “flexibility”easy to change</p>
-<p>二<br>
-SOLID<br>
-s：</p>
+<p>SOLID原则实际上就是基于以上几点自然而然推导出来的。<br>
+1.单一责任原则（SRP）<br>
+基于附加因素2 推导可得<br>
+2.开闭原则（OCP）<br>
+基于附加因素1 2推导可得<br>
+3.里氏替换原则（LSP）<br>
+基于因素1 因素3 结论2推导可得<br>
+4.接口分离原则（ISP）<br>
+基于推导结论2 衍生可得<br>
+5.依赖倒置原则<br>
+基于因素3 因素2 可得</p>
 
               </div>
               <div class="toc-container">

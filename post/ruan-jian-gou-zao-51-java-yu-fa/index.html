@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>软件构造 5.1 （java语法） | Gridea</title>
-<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655131958056">
+<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655220725288">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="软件构造 5.1 （java语法） | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
@@ -30,7 +30,7 @@ map.p..." />
       <div class="main-content">
         <div class="site-header">
   <a href="https://daydream-noquitter.github.io/coding.github.io/">
-  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655131958056" alt="">
+  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655220725288" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -90,7 +90,7 @@ map.p..." />
                 2022-05-01
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
@@ -109,7 +109,38 @@ list.add<br>
 map.put(,)<br>
 map.get()<br>
 常用的两个接口<br>
-思考一下java也是一个面向对象语言，所以我在思考的时候，实际上就是在思考这个对象应该怎么来操作。</p>
+思考一下java也是一个面向对象语言，所以我在思考的时候，实际上就是在思考这个对象应该怎么来操作。<br>
+4.怎么遍历<br>
+1）<br>
+Set<int> a =new hashset();<br>
+for(int x:a){ }是一种<br>
+Iterator itor =set.iterator(); //获得迭代器 itor<br>
+//通过迭代器的迭代集合<br>
+while( itor.hasNext()) { //判断下一个元素有没有,如果有往下移<br>
+NewTitle title = (NewTitle) itor.next();<br>
+System.out.println(title.getId()+&quot;-&quot;+title.getTitle());<br>
+}<br>
+这也是一种<br>
+2）怎么遍历map<br>
+for (Map.Entry&lt;string,string&gt; entry : map.entrySet()) {<br>
+String mapKey = entry.getKey();<br>
+String mapValue = entry.getValue();<br>
+System.out.println(mapKey + &quot;：&quot; + mapValue);<br>
+}<br>
+或者for (String key : map.keySet()) {<br>
+System.out.println(key);<br>
+}<br>
+for (String value : map.values()) {<br>
+System.out.println(value);<br>
+}<br>
+或者<br>
+Iterator&lt;Entry&lt;String, String&gt;&gt; entries = map.entrySet().iterator();<br>
+while (entries.hasNext()) {<br>
+Entry&lt;String, String&gt; entry = entries.next();<br>
+String key = entry.getKey();<br>
+String value = entry.getValue();<br>
+System.out.println(key + &quot;:&quot; + value);<br>
+}</p>
 
               </div>
               <div class="toc-container">

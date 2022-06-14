@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>第1.3讲 | Gridea</title>
-<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655131958056">
+<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655220725288">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="第1.3讲 | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
@@ -27,7 +27,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://daydream-noquitter.github.io/coding.github.io/">
-  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655131958056" alt="">
+  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655220725288" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -87,7 +87,7 @@
                 2022-06-02
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
@@ -101,7 +101,23 @@
 按照阶段划分  build 和tuntime<br>
 按照动态性 moment 和period moment指某一时刻，period指这一阶段的<br>
 按照层次 代码<br>
-其实这些都很容易思考出来</p>
+其实这些都很容易思考出来<br>
+二：<br>
+Git的结构、工作原理、基本指令<br>
+一个 Git 仓库分为三个部分：<br>
+.git 目录：本地的 CMDB<br>
+工作目录：本地文件系统<br>
+暂存区：.git 目录中的一个文件，隔离工作目录和 Git 仓库</p>
+<p>一个 commit 存储一个树形结点。tree 中包含了数个 blob；每个 blob 是一个压缩了的仓库文件，不保存文件名信息。<br>
+对于每个文件的每个版本（或是不同文件名但相同内容的文件），Git 只会存储一个 blob，而允许多个 commit tree 指向同一个 blob。<br>
+一个 commit 中与之前相比未发生变化的文件，无需重复存储。文件未发生变化，则后续多个版本始终指向同一个 blob；文件发生变化了，存储两份不同的 blob，两个版本指向不同的 blob。<br>
+常用指令<br>
+git add .<br>
+git commit<br>
+git checkout<br>
+git push<br>
+git pull<br>
+git fetch</p>
 
               </div>
               <div class="toc-container">

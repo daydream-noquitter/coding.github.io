@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>关于override和overload | Gridea</title>
-<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655131958056">
+<link rel="shortcut icon" href="https://daydream-noquitter.github.io/coding.github.io//favicon.ico?v=1655220725288">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://daydream-noquitter.github.io/coding.github.io//styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="关于override和overload | Gridea - Atom Feed" href="https://daydream-noquitter.github.io/coding.github.io//atom.xml">
@@ -15,9 +15,8 @@
 这道题问的是 Animal animalRefTohorse = new Horse（）
 animalrRefTohorse是哪种类型的
 第一反应是它是horse的为什么呢
-是跟
-deep copy
-..." />
+实际上区分override overload 看参数列表
+另外的..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -27,7 +26,7 @@ deep copy
       <div class="main-content">
         <div class="site-header">
   <a href="https://daydream-noquitter.github.io/coding.github.io/">
-  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655131958056" alt="">
+  <img class="avatar" src="https://daydream-noquitter.github.io/coding.github.io//images/avatar.png?v=1655220725288" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -98,8 +97,9 @@ deep copy
 <p>这道题问的是 Animal animalRefTohorse = new Horse（）<br>
 animalrRefTohorse是哪种类型的<br>
 第一反应是它是horse的为什么呢<br>
-是跟</p>
-<p>deep copy</p>
+实际上区分override overload 看参数列表</p>
+<p>另外的事情就是 接口 A = new B（）；<br>
+这样其实A只能调用接口里声明的方法</p>
 
               </div>
               <div class="toc-container">

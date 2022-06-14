@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://daydream-noquitter.github.io/coding.github.io/</id>
     <title>Gridea</title>
-    <updated>2022-06-14T01:29:47.952Z</updated>
+    <updated>2022-06-14T15:32:29.559Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://daydream-noquitter.github.io/coding.github.io/"/>
     <link rel="self" href="https://daydream-noquitter.github.io/coding.github.io/atom.xml"/>
@@ -141,8 +141,9 @@ Comparator 在第十章讲的 它是个接口 实现的是compare (T a1, T a2)<b
 <p>这道题问的是 Animal animalRefTohorse = new Horse（）<br>
 animalrRefTohorse是哪种类型的<br>
 第一反应是它是horse的为什么呢<br>
-是跟</p>
-<p>deep copy</p>
+实际上区分override overload 看参数列表</p>
+<p>另外的事情就是 接口 A = new B（）；<br>
+这样其实A只能调用接口里声明的方法</p>
 ]]></content>
     </entry>
     <entry>
@@ -158,7 +159,23 @@ animalrRefTohorse是哪种类型的<br>
 按照阶段划分  build 和tuntime<br>
 按照动态性 moment 和period moment指某一时刻，period指这一阶段的<br>
 按照层次 代码<br>
-其实这些都很容易思考出来</p>
+其实这些都很容易思考出来<br>
+二：<br>
+Git的结构、工作原理、基本指令<br>
+一个 Git 仓库分为三个部分：<br>
+.git 目录：本地的 CMDB<br>
+工作目录：本地文件系统<br>
+暂存区：.git 目录中的一个文件，隔离工作目录和 Git 仓库</p>
+<p>一个 commit 存储一个树形结点。tree 中包含了数个 blob；每个 blob 是一个压缩了的仓库文件，不保存文件名信息。<br>
+对于每个文件的每个版本（或是不同文件名但相同内容的文件），Git 只会存储一个 blob，而允许多个 commit tree 指向同一个 blob。<br>
+一个 commit 中与之前相比未发生变化的文件，无需重复存储。文件未发生变化，则后续多个版本始终指向同一个 blob；文件发生变化了，存储两份不同的 blob，两个版本指向不同的 blob。<br>
+常用指令<br>
+git add .<br>
+git commit<br>
+git checkout<br>
+git push<br>
+git pull<br>
+git fetch</p>
 ]]></content>
     </entry>
     <entry>
@@ -258,11 +275,22 @@ step：<br>
 承认事实1： 变化在软件生命周期中是不可避免的事情<br>
 附加因素1：我们希望尽可能减少工作量以及尽可能高效的工作<br>
 推导结论1： 我们需要注意编写软件中的可维护性，也就是说在初期充分考虑未来的变化<br>
+附加因素2：低耦合高内聚<br>
+附加因素3：层次结构清晰<br>
+推导结论2： 我们需要实现一个框架用来扩展功能<br>
 概念解释： “maintainability”,全周期需要考虑的 “extensibility”设计时需要考虑  and<br>
 “flexibility”easy to change</p>
-<p>二<br>
-SOLID<br>
-s：</p>
+<p>SOLID原则实际上就是基于以上几点自然而然推导出来的。<br>
+1.单一责任原则（SRP）<br>
+基于附加因素2 推导可得<br>
+2.开闭原则（OCP）<br>
+基于附加因素1 2推导可得<br>
+3.里氏替换原则（LSP）<br>
+基于因素1 因素3 结论2推导可得<br>
+4.接口分离原则（ISP）<br>
+基于推导结论2 衍生可得<br>
+5.依赖倒置原则<br>
+基于因素3 因素2 可得</p>
 ]]></content>
     </entry>
     <entry>
